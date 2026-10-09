@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2402597125646798504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2732282968434566028}
+  - component: {fileID: 3730597179117751936}
+  - component: {fileID: 1212202610801959503}
+  m_Layer: 0
+  m_Name: Skill4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2732282968434566028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402597125646798504}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3730597179117751936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402597125646798504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef4a45ab2beaa443b84467148f1d8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AllSkill
+  runeAdded: {fileID: 0}
+  bodySkill: 0
+  permanent: 0
+  playerSword: {fileID: 0}
+  runeId: 0
+  newRune: 1
+--- !u!114 &1212202610801959503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402597125646798504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eab1ddfd731f0a429b398ac006cbeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CampaignSkill
+  effect: 12
+  title: "\u041E\u0440\u0431\u0438\u0442\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043B\u0438\u043D\u043E\u043A"
+  description: "\u041A\u043B\u0438\u043D\u043E\u043A \u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\u044F \u0432\u043E\u043A\u0440\u0443\u0433 \u043C\u0435\u0447\u0430 \u0438 \u043F\u043E\u0440\u0430\u0436\u0430\u0435\u0442 \u0432\u0440\u0430\u0433\u043E\u0432."
+  amount: 1

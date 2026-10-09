@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1949885778604715472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5378632556378089743}
+  - component: {fileID: 8375939311487355991}
+  m_Layer: 0
+  m_Name: Mat3TreesGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5378632556378089743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949885778604715472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.787281, y: 11.924807, z: 2.696044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8375939311487355991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949885778604715472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f7798a7dff16478503e89e2f220b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trees:
+  - {fileID: 651574438334541574, guid: 56e4a0992808f474885f99b4f4a2a73e, type: 3}
+  - {fileID: 9021745459483751900, guid: bd86d5a05f06a0f469ddf282bfe351bb, type: 3}
+  - {fileID: 7581172009647078192, guid: a381aedfd87c0524bb674b07027ae22b, type: 3}
+  - {fileID: 5911533510411728879, guid: 419703fdc886b7245a45a093bd634048, type: 3}
+  - {fileID: 1917869597504376916, guid: 8296250772119c543afc98905fe4b805, type: 3}
+  - {fileID: 2713431967691118970, guid: 6e800adde1c2b1346b785b5714c98e0a, type: 3}
+  - {fileID: 4626774383308924509, guid: f9637640c68df2340bc4d1aac9005422, type: 3}
+  - {fileID: 8416061941368544603, guid: e4fa494d13994de43b62eac128c34ef2, type: 3}
+  minAmount: 1
+  maxAmount: 3
+  deltaPos: 3.5

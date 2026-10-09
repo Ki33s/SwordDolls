@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &16866894379124673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1391391002380270, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_Name
+      value: SM_Item_Cauldron_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055261987274110, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64531850024605570, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+--- !u!1 &17765014079160367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1391391002380270, guid: 91be741fc58ce0746ad56d17a1404e59, type: 3}
+  m_PrefabInstance: {fileID: 16866894379124673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &3116296549136432973
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17765014079160367}
+  serializedVersion: 2
+  m_Mass: 40
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &8951105203277785645
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17765014079160367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18744263
+  m_Height: 0.36576542
+  m_Direction: 1
+  m_Center: {x: -0.000029437244, y: 0.18288271, z: 0.0002682656}
+--- !u!114 &3860261464779821489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17765014079160367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c13872110b3a042b0b29d6bd594f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dollId: 0
+  forceBack: 500
+  effect: {fileID: 7615381610535218224, guid: 3d38c62f841d8704ab68d0d3963dbb65, type: 3}
+  impactType: 1
+  isObstacle: 1

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9213957817501276127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7248653858535182066}
+  - component: {fileID: 3755016345378518845}
+  m_Layer: 0
+  m_Name: VoiceDieBlacksmithFemale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7248653858535182066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213957817501276127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.91730374, y: 4.8399005, z: 6.407564}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3755016345378518845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213957817501276127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639ab002911a3e541b0776b1ff4fba25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionSound:
+  - {fileID: 8300000, guid: bc765bb19e728fa448b36693f3111fac, type: 3}
+  - {fileID: 8300000, guid: d34523ded1056e54f8f238ff2fae717b, type: 3}
+  - {fileID: 8300000, guid: 35dd42012a1a0c64f92d33b4c64da022, type: 3}
+  - {fileID: 8300000, guid: e08d6f33f5899bb42a2fe79239d92f0b, type: 3}

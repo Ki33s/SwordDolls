@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8953045633039770299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6071194207755693002}
+  - component: {fileID: 2543442239927436949}
+  m_Layer: 0
+  m_Name: Mat2GrassGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6071194207755693002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953045633039770299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8622041, y: 2.1632814, z: -4.3873167}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2543442239927436949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953045633039770299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a5a40568bb55f438cc49d256ceae33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grass:
+  - {fileID: 5840628692341611293, guid: cd6871a3a92024d41a57ee9d900a762d, type: 3}
+  - {fileID: 2235751004788999304, guid: 399091152fa317f4f8714d3d26927fd7, type: 3}
+  - {fileID: 8245724636555948053, guid: 2063f475cb05b344697f64649cccbaab, type: 3}
+  - {fileID: 7176266751930605710, guid: 0c05366eeacd7074e87783a4512dab85, type: 3}
+  - {fileID: 5507173717582628364, guid: 9b0f4ef103f639e4295be7a708910224, type: 3}
+  - {fileID: 5840628692341611293, guid: cd6871a3a92024d41a57ee9d900a762d, type: 3}
+  - {fileID: 2235751004788999304, guid: 399091152fa317f4f8714d3d26927fd7, type: 3}
+  - {fileID: 8245724636555948053, guid: 2063f475cb05b344697f64649cccbaab, type: 3}
+  - {fileID: 8245724636555948053, guid: 2063f475cb05b344697f64649cccbaab, type: 3}
+  - {fileID: 225374662768722675, guid: 2f80448c087e11f4392fdfda7e2ff5ba, type: 3}
+  - {fileID: 765797800308574305, guid: b20ccbf062e9f484a9b976a12d7258eb, type: 3}
+  - {fileID: 3375435069790825054, guid: 49a9322830c5e4f40ba274a506a229dc, type: 3}
+  - {fileID: 4604902434235158407, guid: 5eaf8f5859de93a4da27f5fd74a52aee, type: 3}
+  - {fileID: 7434952964237797805, guid: ec4574105ef67994499d143178d157f4, type: 3}
+  - {fileID: 8853015988813262860, guid: ba9da5807e45d1f4f837c728c19ed1be, type: 3}
+  - {fileID: 8806194039663140609, guid: 26f6f2d11a98c3c459630493b33bdfb8, type: 3}
+  - {fileID: 7158265336139760146, guid: 142ea061a77a4e248af0e06d8ee08ddc, type: 3}
+  minGrassAmount: 6
+  maxGrassAmount: 14
+  deltaPos: 3.5

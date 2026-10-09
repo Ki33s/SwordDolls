@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2039877484924878564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5466821130273653386}
+  - component: {fileID: 7271644724816590014}
+  - component: {fileID: -1424011293643608591}
+  m_Layer: 0
+  m_Name: RuneLootSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5466821130273653386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039877484924878564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7271644724816590014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039877484924878564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f7c161b04370c41bbeed371beab7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bronzeRunes:
+  - {fileID: 8621440440827112264, guid: 00054754a416c4940b09a7948c4ca678, type: 3}
+  - {fileID: 3257939539682307911, guid: da1d3f1048abdd640a9b80f3e8eb8898, type: 3}
+  - {fileID: 5394249200717799773, guid: 31029054b862aef42bd9def4b145e263, type: 3}
+  - {fileID: 8700235624268313138, guid: b273db136445e9d4c973296a743b7427, type: 3}
+  - {fileID: 607567647190469900, guid: e17aa670fd5d5654c96104572c0a7384, type: 3}
+  - {fileID: 8330825325075631145, guid: 0388f8bd0f2a05045843331a5cab45c4, type: 3}
+  - {fileID: 1923800753436118049, guid: 6f0a41ec98cb0214193c002509bf3c54, type: 3}
+  - {fileID: 15085873530465139, guid: 1befce562a246be4f90c82e64f96135d, type: 3}
+  - {fileID: 5699617322578417812, guid: f46d5985c3e817c4c88b01af2dad4346, type: 3}
+  - {fileID: 7952074227286121902, guid: d1e5c6a4ab1e821478518f383d906319, type: 3}
+  - {fileID: 1618668529689308336, guid: 23b5d0e2e9715a14d920016108d64d27, type: 3}
+  - {fileID: 2071958870164701829, guid: 5a249a79f4e7fd1488194bd17b554f6d, type: 3}
+  silverRunes:
+  - {fileID: 2152119013441736185, guid: a2a0ee1aece111e4daee1ac459a8dee9, type: 3}
+  - {fileID: 1364711057099105342, guid: dedc2b2a16f3c1d4fa7ae5a618890d5a, type: 3}
+  - {fileID: 1929621263163563903, guid: a2abf110729927041a3f0bbab461336f, type: 3}
+  - {fileID: 8323067166675894303, guid: c2963d19faa7fcf4ca7cc7698c6640e9, type: 3}
+  - {fileID: 2289340814228305383, guid: c79c47abf42769d45ab2849bf1dd37ca, type: 3}
+  goldRunes:
+  - {fileID: 6929802534043203586, guid: a3b86c2362a9de04b8bf0c32d5be1dd1, type: 3}
+  - {fileID: 8924652880244689630, guid: f3e46277012dfd74ab3cd06073d4bbf6, type: 3}
+  - {fileID: 8556562594920604874, guid: 176aae6ab56efa949917cdd9396181ab, type: 3}
+  - {fileID: 175455571977364938, guid: b11ded337e9194d429643cf80fc20324, type: 3}
+--- !u!114 &-1424011293643608591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039877484924878564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4f2617065ee494397412fe7ea8efdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 500
+  prob: 50

@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5127911923012776664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 620547928134691638, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709392464012444094, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709392464012444094, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709392464012444094, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918746545820584149, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_text
+      value: Dagger06L
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643943889305449858, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: newSword
+      value: 
+      objectReference: {fileID: 8772996326150717368, guid: edd42183076f3cc49b29a30e03da4112, type: 3}
+    - target: {fileID: 6727829075569269909, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_text
+      value: Dagger06L
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731451154102966868, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_text
+      value: 'Damage: 25-35
+
+        Length: 1.5
+
+        Speed: 6
+
+        Force:
+        6'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027094181206450173, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_Name
+      value: Dagger06L(E3)A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.468
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030597555771964231, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785448574420302799, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_text
+      value: 'Damage: 25-35
+
+        Length: 1.5
+
+        Speed: 6
+
+        Force:
+        6'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045179679619944759, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 010b68b76b8ebc947985c03023052fb2, type: 3}

@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8425490631676404971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7507060865619084008}
+  - component: {fileID: 6115208089981460567}
+  - component: {fileID: 3550459129071711750}
+  - component: {fileID: 5402542561857721373}
+  m_Layer: 0
+  m_Name: Stage5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7507060865619084008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425490631676404971}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6115208089981460567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425490631676404971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ba29b74d70f5141b97d55fffed511d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTile: {fileID: 2735142068018600063, guid: 1c17935b41b114a459ba0f91c4ab9be1, type: 3}
+  groundCollider: {fileID: 6121364074327887451, guid: d196a90f80d2c1144ac0bcb4a0ebba55, type: 3}
+  groundMaterials:
+  - {fileID: 2100000, guid: 7cf6c4ed2f5823b4495e4486033a3d02, type: 2}
+  - {fileID: 2100000, guid: a957f9d897c68df408c57a657d783fa1, type: 2}
+  grassGenerators:
+  - {fileID: 5786405317625128046, guid: bd9d9700a4d5673459c4c791b7e6f4e9, type: 3}
+  - {fileID: 8953045633039770299, guid: 8a4892d63de3ada4f880a27d21b720d0, type: 3}
+  treeGenerators:
+  - {fileID: 1851832914916306642, guid: 299c061a6f4649042929217bee57cebe, type: 3}
+  - {fileID: 2095118188592715683, guid: 880805452ee23f240b1b0c708a14ee4c, type: 3}
+  hedges:
+  - {fileID: 4823595127435081329, guid: 893601c4f3a07154ca24a12f2373f8cc, type: 3}
+  - {fileID: 5983252181868908192, guid: 2f04bbf7328b6414992191dc573b2d37, type: 3}
+  houses:
+  - {fileID: 7060968839567124027, guid: 7f4de3ad30fbe8043afeb73c4836b731, type: 3}
+  enemyMaterials:
+  - {fileID: 2100000, guid: e3d8c45c9df90aa4d8a6a4a1dc5a3b95, type: 2}
+  - {fileID: 2100000, guid: f8cdfec67051f5b49b89bb558b39d63c, type: 2}
+  - {fileID: 2100000, guid: 7a55ee699ad0a2f42af5eb327296d022, type: 2}
+  - {fileID: 2100000, guid: 50d65a1c442a0c840adaefe5f6899db3, type: 2}
+  - {fileID: 2100000, guid: 20e258dfeee82c249a858f51e004546b, type: 2}
+  - {fileID: 2100000, guid: a2897c3aeeb53764a92e472c8e73d76d, type: 2}
+  - {fileID: 2100000, guid: 231cbfd0f2c87174abf4779f7ee85aa5, type: 2}
+  - {fileID: 2100000, guid: 22f7ac8ce7d70874e870a03256ce0c14, type: 2}
+  crystall: {fileID: 6880479335780627118, guid: 07fd8cb29242d964cb568bfe13c9f44b, type: 3}
+  tilesNum: 6
+  tilesLength: 7
+  tilesTypes: 1
+  tilesPodTypes: 2
+  tileTypeChangeProb: 0.25
+  tilePodTypeChangeProb: 0.5
+  anvillFinish: 0
+  anvill: {fileID: 3583688517819110025, guid: 097906b80ec1d9d41889fc56f2013d68, type: 3}
+  roadTile: {fileID: 3929144826156841014, guid: 9478f61629388084cacc073c1d321a37, type: 3}
+  roadLength: 3
+  newRoadDeltaAngle: 20
+  newHouseK: 0.05
+  minPowerPerLevel: 4
+  maxPowerPerLevel: 4
+  newLevelMinEnemyPower: 12
+  newRoadK: 0.05
+  level: 4
+  newLevelCouldown: 2
+  newLevelStart: 0
+  enemies: []
+  allEnemies: []
+  crystalDestroyed: 0
+--- !u!114 &3550459129071711750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425490631676404971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b16188692bbdc046b470c4a8d9a3aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CampaignStage
+  number: 5
+  title: "\u041A\u0440\u0435\u043F\u043E\u0441\u0442\u044C \u043F\u0430\u043B\u0430\u0447\u0430"
+  authoredEncounters: 1
+  enemyPool:
+  - {fileID: 7725464835493914981, guid: d3bcd80a7b1e0ae49b2053824213557e, type: 3}
+  - {fileID: 6963115297212152620, guid: 5049892f7d5241b4d8a7d104985e6917, type: 3}
+  - {fileID: 3135504552770188310, guid: cb14284b7d9d73d468911f6d86202a0b, type: 3}
+  - {fileID: 1539664147830281901, guid: 6fe0e921e85a193429c52ab254a40db6, type: 3}
+  - {fileID: 9133141331037075539, guid: de2ef55d3cb76294eb71d811361d5ced, type: 3}
+  - {fileID: 660717099430486002, guid: 20e7b700bbf405a43b95c21d0ed07af5, type: 3}
+  - {fileID: 4527454165641857458, guid: 17ec6354ea124be45933d0eb1484f179, type: 3}
+  - {fileID: 2904124839873382101, guid: 0ba6dc1eb3a11ec42afcb8977a528387, type: 3}
+  - {fileID: 656467163363505718, guid: f559a5056928fee47bf66469199f4f3b, type: 3}
+  - {fileID: 3708505751337747739, guid: aae8622bbfa93204a94a6275c95be247, type: 3}
+  - {fileID: 9131780432440098210, guid: a29057133f51eb34abfc7db344ca47c5, type: 3}
+  - {fileID: 5689390118033694000, guid: 10a0ed9dd42149a4097f17f3678ef774, type: 3}
+  - {fileID: 8159545447208476832, guid: 3eafa7a104fe98749a60abe2eb31a319, type: 3}
+  - {fileID: 370494821911936853, guid: c26e7c9f67294c14399d854ddd6345b6, type: 3}
+  - {fileID: 8013847973638274455, guid: b491933df68cb464c89d2ff8dcbded61, type: 3}
+  miniBosses:
+  - {fileID: 8976801718445523348, guid: 44f301246685a0f498649b0cdd4ab49e, type: 3}
+  - {fileID: 2068983143578888615, guid: 8806a64216449ea4999ae3e4d01a214f, type: 3}
+  minEnemies: 9
+  maxEnemies: 9
+  bossPrefab: {fileID: 418224625575849365, guid: 1706edd6846c5824cb59abbc5007884c, type: 3}
+--- !u!114 &5402542561857721373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425490631676404971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e61ffd51193d6479324444d3648642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CampaignArena
+  props:
+  - {fileID: 1894982720226970, guid: b26e035715d763f409a7e837ae204dab, type: 3}
+  - {fileID: 1179169510983948, guid: bc72ab628c0e69243ba6d91b4db64d46, type: 3}
+  - {fileID: 1339180718462196, guid: 356bab106e6583242b77502d598f2c55, type: 3}
+  - {fileID: 1786336147855416, guid: 701f0fb9f7bd2f542aa3be8c738e2d80, type: 3}
+  - {fileID: 1844386919898034, guid: 1a67b1e0bb5b63f42b27f651ae919fd6, type: 3}
+  - {fileID: 1465701955636292, guid: 725ee4fa5faa0b842886ba38aa6f8e2b, type: 3}
+  - {fileID: 1114366929200988, guid: 0a9affd0363fb924e9ba59dbac540d35, type: 3}
+  - {fileID: 1547794875069070, guid: c88647a9d96bbda4f8aaae18ce2dd222, type: 3}
+  - {fileID: 1723226959556726, guid: 2b8e140e9e5b6cc4c88a0feafe1ca503, type: 3}
+  - {fileID: 1478853273900766, guid: c472555055838f54ba580722a6b38cb7, type: 3}
+  - {fileID: 1009994949924006, guid: 134adbd099a2ba24f86fedcc7e222f76, type: 3}
+  - {fileID: 1945102844411004, guid: ae362b32a2e1e1a479b8bc67e1d530bc, type: 3}

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5485932561495342668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5485932561495342670}
+  - component: {fileID: 5485932561495342669}
+  m_Layer: 0
+  m_Name: Level1.5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5485932561495342670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485932561495342668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5485932561495342669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485932561495342668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ba29b74d70f5141b97d55fffed511d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTile: {fileID: 2735142068018600063, guid: 1c17935b41b114a459ba0f91c4ab9be1, type: 3}
+  groundCollider: {fileID: 6121364074327887451, guid: d196a90f80d2c1144ac0bcb4a0ebba55, type: 3}
+  groundMaterials:
+  - {fileID: 2100000, guid: 7cf6c4ed2f5823b4495e4486033a3d02, type: 2}
+  - {fileID: 2100000, guid: a957f9d897c68df408c57a657d783fa1, type: 2}
+  - {fileID: 2100000, guid: feaf4d7c3ab17d641a8f3678c721dd92, type: 2}
+  - {fileID: 2100000, guid: 4fbb203f89f5d67449a7098d4556b9b6, type: 2}
+  grassGenerators:
+  - {fileID: 5786405317625128046, guid: bd9d9700a4d5673459c4c791b7e6f4e9, type: 3}
+  - {fileID: 8953045633039770299, guid: 8a4892d63de3ada4f880a27d21b720d0, type: 3}
+  - {fileID: 6991629798751610295, guid: d7e826cb8d5084e4c836d9fe4453861c, type: 3}
+  - {fileID: 7536276648874384499, guid: 0f594321e7e829546ae0d3ddaee75f0b, type: 3}
+  treeGenerators:
+  - {fileID: 1851832914916306642, guid: 299c061a6f4649042929217bee57cebe, type: 3}
+  - {fileID: 2095118188592715683, guid: 880805452ee23f240b1b0c708a14ee4c, type: 3}
+  - {fileID: 7007748914368888867, guid: 100dde36045e1324286dd795c7be6a35, type: 3}
+  - {fileID: 8985856714460206048, guid: ac90af34dc1bb8243a7ac4ac6af1abca, type: 3}
+  hedges:
+  - {fileID: 4823595127435081329, guid: 893601c4f3a07154ca24a12f2373f8cc, type: 3}
+  - {fileID: 5983252181868908192, guid: 2f04bbf7328b6414992191dc573b2d37, type: 3}
+  houses:
+  - {fileID: 1175185197622059316, guid: 708fa5081a6fcdf408e3d8f412698a95, type: 3}
+  - {fileID: 54255233459556153, guid: a8f928fbde9eba64eb5da3ab0439dc7c, type: 3}
+  - {fileID: 3822228557407863584, guid: 61a81c432a3aae04d8619af3c5c681da, type: 3}
+  enemyMaterials:
+  - {fileID: 2100000, guid: e3d8c45c9df90aa4d8a6a4a1dc5a3b95, type: 2}
+  - {fileID: 2100000, guid: f8cdfec67051f5b49b89bb558b39d63c, type: 2}
+  - {fileID: 2100000, guid: 7a55ee699ad0a2f42af5eb327296d022, type: 2}
+  - {fileID: 2100000, guid: 50d65a1c442a0c840adaefe5f6899db3, type: 2}
+  - {fileID: 2100000, guid: 20e258dfeee82c249a858f51e004546b, type: 2}
+  - {fileID: 2100000, guid: a2897c3aeeb53764a92e472c8e73d76d, type: 2}
+  - {fileID: 2100000, guid: 231cbfd0f2c87174abf4779f7ee85aa5, type: 2}
+  - {fileID: 2100000, guid: 22f7ac8ce7d70874e870a03256ce0c14, type: 2}
+  crystall: {fileID: 6880479335780627118, guid: 07fd8cb29242d964cb568bfe13c9f44b, type: 3}
+  tilesNum: 4
+  tilesLength: 7
+  tilesTypes: 2
+  tilesPodTypes: 2
+  tileTypeChangeProb: 0.25
+  tilePodTypeChangeProb: 0.5
+  anvillFinish: 0
+  anvill: {fileID: 3583688517819110025, guid: 097906b80ec1d9d41889fc56f2013d68, type: 3}
+  roadTile: {fileID: 3929144826156841014, guid: 9478f61629388084cacc073c1d321a37, type: 3}
+  roadLength: 3
+  newRoadDeltaAngle: 20
+  newHouseK: 0.05
+  minPowerPerLevel: 4
+  maxPowerPerLevel: 7
+  newLevelMinEnemyPower: 4
+  newRoadK: 0.05
+  level: 2
+  newLevelCouldown: 3
+  newLevelStart: 0
+  enemies: []
+  allEnemies: []
+  crystalDestroyed: 0

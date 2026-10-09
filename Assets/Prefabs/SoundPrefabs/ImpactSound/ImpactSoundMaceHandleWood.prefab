@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1397659743787310705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5361863776302363566}
+  - component: {fileID: 51093112209801051}
+  m_Layer: 0
+  m_Name: ImpactSoundMaceHandleWood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5361863776302363566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397659743787310705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 12.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51093112209801051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397659743787310705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f96a33f34708c1468325c8fe1446dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactBloodAudioclips:
+  - {fileID: 8300000, guid: a4989597712dfcb41b07b4e9330eb984, type: 3}
+  - {fileID: 8300000, guid: c6a31a2099bd0fe488e65c64a89c5a41, type: 3}
+  - {fileID: 8300000, guid: 964d596898523c047b40b6c782cbcd95, type: 3}
+  - {fileID: 8300000, guid: a4d2fa9c45193744abd9cbc6f2f6b75f, type: 3}
+  - {fileID: 8300000, guid: 7b8128600626a7142a6d580628be8630, type: 3}
+  - {fileID: 8300000, guid: 69834e7a104623349a6656e7fe62b462, type: 3}
+  - {fileID: 8300000, guid: 60e7cd824ca719b428338847700d86d1, type: 3}
+  - {fileID: 8300000, guid: f699894c0494e5643ae81f5a3a643d65, type: 3}
+  - {fileID: 8300000, guid: aa9ac50ee909ddf41bba4b07ae04ef79, type: 3}
+  impactMetallAudioclips:
+  - {fileID: 8300000, guid: 37cbc3f984fafc945a98db864793dd61, type: 3}
+  - {fileID: 8300000, guid: 10d62f490f2164f4e869d0f233baf48d, type: 3}
+  - {fileID: 8300000, guid: 19520f45be111604aa4099526d6355be, type: 3}
+  - {fileID: 8300000, guid: b7b0ba850726a3542a22d377d0398049, type: 3}
+  - {fileID: 8300000, guid: 87e674f8a1fa2294e945d893a31a3685, type: 3}
+  - {fileID: 8300000, guid: b4d9500fd52b68d4b9a2a3b3c35cf7e8, type: 3}
+  - {fileID: 8300000, guid: e1a3ead7a71b32a42889037ae6795d91, type: 3}
+  - {fileID: 8300000, guid: 8a09358c66f50264f880828981848f49, type: 3}
+  - {fileID: 8300000, guid: c5f4e332b809e2243ad199a42ee4ee28, type: 3}
+  - {fileID: 8300000, guid: 5c94cb2a35df2814a94e9a65c9897257, type: 3}
+  - {fileID: 8300000, guid: 49c7b84be0c9b2c41a7bb366c62f2f63, type: 3}
+  - {fileID: 8300000, guid: 1356f92455785ee43a01de57adf9bfe8, type: 3}
+  impactStoneAudioclips:
+  - {fileID: 8300000, guid: af072eae541f6ae4090600a2e390ce1d, type: 3}
+  - {fileID: 8300000, guid: 155ed486d25af074dba1970ac6df5b22, type: 3}
+  - {fileID: 8300000, guid: 6f9e78b94a8993044ae0cacf0358c2e6, type: 3}
+  - {fileID: 8300000, guid: 79f2fea4a72cb8a42b0c5674072c71e8, type: 3}
+  - {fileID: 8300000, guid: 2b41406cb6edb4e49a50f3eec00dd30d, type: 3}
+  - {fileID: 8300000, guid: 38ff4850dd7cfc841b2e1c40d8d3a1f4, type: 3}
+  - {fileID: 8300000, guid: 383bcd4ce05da834286a3c8c00a03741, type: 3}
+  - {fileID: 8300000, guid: b7de402e85957a84cb18a71771ff85f2, type: 3}
+  - {fileID: 8300000, guid: dcff146f05df04544bf60a58a11ed3ff, type: 3}
+  - {fileID: 8300000, guid: 3f67be2a5f46d2a4685e37e13157e66c, type: 3}
+  impactWoodAudioclips:
+  - {fileID: 8300000, guid: 9f5feae73a932974e8af1df687d50dbe, type: 3}
+  - {fileID: 8300000, guid: b687cabba8661a74087a0aca5568a174, type: 3}
+  - {fileID: 8300000, guid: b378fa718c4d72047ae50a5739f155dd, type: 3}
+  - {fileID: 8300000, guid: 1cd0c250715ea584eac77115c2102ecc, type: 3}
+  - {fileID: 8300000, guid: d045a6bac1bb1bc4f8be210ab83770ec, type: 3}
+  - {fileID: 8300000, guid: 40f46767bfb0cc0489b4f4c20b8f8749, type: 3}
+  - {fileID: 8300000, guid: 5f5adf75489113b4a9f0816f8af4b62a, type: 3}
+  - {fileID: 8300000, guid: b9ee19b1d9652ff40aa580ff62800892, type: 3}
+  - {fileID: 8300000, guid: c51b3721a1023ad44b2c75f37bf60b40, type: 3}
+  - {fileID: 8300000, guid: 2a97bbab7a3242349a32bb39cee87b8c, type: 3}
+  - {fileID: 8300000, guid: 416ff93bebdcee542b9c419998f4c624, type: 3}
+  - {fileID: 8300000, guid: 45c0a3f11fc0e5e48a6ab7d57997e8df, type: 3}
+  - {fileID: 8300000, guid: 148795e993789a8488e4854ababc4b31, type: 3}
+  - {fileID: 8300000, guid: aa04dfe40764f5640819e05f7e0c329d, type: 3}
+  - {fileID: 8300000, guid: 052490fbdcec84a4a92546cf989bcf95, type: 3}
+  impactType: 0

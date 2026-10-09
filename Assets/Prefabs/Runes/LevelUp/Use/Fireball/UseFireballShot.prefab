@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1957748648411119206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3577391795291565680}
+  - component: {fileID: 989356605398286792}
+  - component: {fileID: 2800067809749880787}
+  m_Layer: 0
+  m_Name: UseFireballShot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3577391795291565680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957748648411119206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4333754, y: 0.3200001, z: 11.891674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989356605398286792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957748648411119206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef4a45ab2beaa443b84467148f1d8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodySkill: 0
+  permanent: 0
+  playerSword: {fileID: 0}
+  runeId: 0
+--- !u!114 &2800067809749880787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957748648411119206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15696d713ea94774882ecf9b8aa4465f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballShotCouldown: 5
+  runesAdded:
+  - {fileID: 2969620707371149701, guid: 747e5149b571413408597ccfc447aa37, type: 3}
+  - {fileID: 1783147264068645244, guid: 4e848cda14125f14c919fa5829231c0f, type: 3}
+  - {fileID: 2248297536704128315, guid: 435c5c31b87948043af348280cc0d20f, type: 3}
+  evoRunes:
+  - {fileID: 3294601484453878867, guid: f7eb6bbf86e2ab240a0fd55ef599c0e3, type: 3}

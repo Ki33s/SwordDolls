@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8852586962675060500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93002996755404588}
+  - component: {fileID: 3996185992041749737}
+  - component: {fileID: 7124691186377398754}
+  m_Layer: 0
+  m_Name: UseSkillFireballAround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &93002996755404588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8852586962675060500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.23778695, y: 0.8925312, z: 12.024523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3996185992041749737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8852586962675060500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef4a45ab2beaa443b84467148f1d8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodySkill: 0
+  permanent: 0
+  playerSword: {fileID: 0}
+  runeId: 0
+--- !u!114 &7124691186377398754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8852586962675060500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a57f7ba09c63e4d9daefc89365e652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballAroundCouldown: 10
+  runesAdded:
+  - {fileID: 2969620707371149701, guid: 747e5149b571413408597ccfc447aa37, type: 3}
+  - {fileID: 1783147264068645244, guid: 4e848cda14125f14c919fa5829231c0f, type: 3}
+  - {fileID: 2248297536704128315, guid: 435c5c31b87948043af348280cc0d20f, type: 3}
+  evoRunes:
+  - {fileID: 3645459907351022188, guid: 63706ce6065f712469051e2c10799202, type: 3}

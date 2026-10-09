@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4890141309098559386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9053261527018646187}
+  - component: {fileID: 2986008080720746596}
+  m_Layer: 0
+  m_Name: ImpactSoundDagger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9053261527018646187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890141309098559386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 12.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2986008080720746596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890141309098559386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f96a33f34708c1468325c8fe1446dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactBloodAudioclips:
+  - {fileID: 8300000, guid: 68e087395647f414888a4d05c0e9ec0f, type: 3}
+  - {fileID: 8300000, guid: e5bf15114b31132449bc1d8b3213c0ef, type: 3}
+  - {fileID: 8300000, guid: a49c8c814b687aa47a5c4a24c4c1e1f4, type: 3}
+  - {fileID: 8300000, guid: 9cae87bedf050574dbe7b62764a0dbdb, type: 3}
+  - {fileID: 8300000, guid: 47d339bbb8e3132429778a821a278bb6, type: 3}
+  - {fileID: 8300000, guid: f712e21cb372fa44a80b79cf1f26eb95, type: 3}
+  - {fileID: 8300000, guid: 67cc41202ecd70a4c8e1b5b00bb313b8, type: 3}
+  - {fileID: 8300000, guid: 7a181123ffc415045b034461edc019af, type: 3}
+  - {fileID: 8300000, guid: 08aaf61b1916f3c4d9aeba5fae636cba, type: 3}
+  - {fileID: 8300000, guid: f95717d488e2fdf468c7d6b6e1dcfa16, type: 3}
+  impactMetallAudioclips:
+  - {fileID: 8300000, guid: 6f9a674e4f40c0e468492030f07ccd7c, type: 3}
+  - {fileID: 8300000, guid: d68ce2270ce0bbf4cbb6f3c13566cd6b, type: 3}
+  - {fileID: 8300000, guid: 315de957edccf0f41a04c67a8d030c01, type: 3}
+  - {fileID: 8300000, guid: 7f883023e4d726e4e853f668b17fc844, type: 3}
+  - {fileID: 8300000, guid: 9fba6189aa319f94682556e4f0ba3232, type: 3}
+  - {fileID: 8300000, guid: 839e77282c4e61540b76f246218c2f18, type: 3}
+  - {fileID: 8300000, guid: 2a9d9af25e4e10b438a3197f5fd2d178, type: 3}
+  - {fileID: 8300000, guid: 8be8afd5a9d44014d9e556c3de29e7ea, type: 3}
+  - {fileID: 8300000, guid: 9fba6189aa319f94682556e4f0ba3232, type: 3}
+  - {fileID: 8300000, guid: fd514b1dd9c34704eb9d4694fe31f0a3, type: 3}
+  - {fileID: 8300000, guid: 0e1d005df6a9258449346ba0818672e8, type: 3}
+  - {fileID: 8300000, guid: 2b49148770cc79f48932f174230a2c51, type: 3}
+  impactStoneAudioclips:
+  - {fileID: 8300000, guid: 6e982863bd41318468ca7335ed1f43c2, type: 3}
+  - {fileID: 8300000, guid: 3bfe22fb3e27d564f9d3fb818938f8f6, type: 3}
+  - {fileID: 8300000, guid: b0876abfbc061af4d84832cf8d63ff6e, type: 3}
+  - {fileID: 8300000, guid: b50823951b17105478c7bf12a4808a4a, type: 3}
+  - {fileID: 8300000, guid: 7c37656c3a149db46af12d2a729b3a78, type: 3}
+  - {fileID: 8300000, guid: 3ba7b7bc829260a43b2344300e8680b2, type: 3}
+  impactWoodAudioclips:
+  - {fileID: 8300000, guid: f82172946eedd444286f45966ad1280f, type: 3}
+  - {fileID: 8300000, guid: edea87db028c3b5498a55f167105e0d0, type: 3}
+  - {fileID: 8300000, guid: c72f4a7e8ea843e4fb5076494f0002eb, type: 3}
+  - {fileID: 8300000, guid: 3b13fa449bd20b94d834445313942608, type: 3}
+  - {fileID: 8300000, guid: 577c7e9a86ca15744814dc131d77cfbe, type: 3}
+  - {fileID: 8300000, guid: 48545a1d23454b94da83ceee5a6e32da, type: 3}
+  - {fileID: 8300000, guid: 8dbdd4831eca9934ba51777f7685dc02, type: 3}
+  - {fileID: 8300000, guid: c952aa92c7e9075429291b975c9f2e38, type: 3}
+  impactType: 0

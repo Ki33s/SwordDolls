@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3270300886046824844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4398323603520047482}
+  - component: {fileID: 2689039989792957824}
+  m_Layer: 0
+  m_Name: Mat1TreesGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4398323603520047482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270300886046824844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.787281, y: 11.924807, z: 2.696044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2689039989792957824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3270300886046824844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f7798a7dff16478503e89e2f220b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trees:
+  - {fileID: 3130584038472385806, guid: cb7e90e84bec2464f9e1f2ae5e706cbd, type: 3}
+  - {fileID: 6360515682012003862, guid: 6eec856d60cae214989bf2090aaa86c5, type: 3}
+  - {fileID: 5911773853780425187, guid: 5ca549114351bff4badebc0a42979f65, type: 3}
+  - {fileID: 4626774383308924509, guid: f9637640c68df2340bc4d1aac9005422, type: 3}
+  - {fileID: 2713431967691118970, guid: 6e800adde1c2b1346b785b5714c98e0a, type: 3}
+  - {fileID: 8416061941368544603, guid: e4fa494d13994de43b62eac128c34ef2, type: 3}
+  - {fileID: 6505715142900132311, guid: b4c52e6f15c0c3748bd78023f9851da4, type: 3}
+  - {fileID: 1142762249632389103, guid: be216a7f73d09cb4382f489a15ebdf41, type: 3}
+  - {fileID: 464824700989505312, guid: 7c28021aee143db428b62c38b6e74e34, type: 3}
+  - {fileID: 8047623987299831025, guid: e15f136f9d77757458a6cbc9a625a02a, type: 3}
+  - {fileID: 5239790737293589732, guid: c36f7acdc97134c40bd876daece419e9, type: 3}
+  minAmount: 2
+  maxAmount: 6
+  deltaPos: 3.5

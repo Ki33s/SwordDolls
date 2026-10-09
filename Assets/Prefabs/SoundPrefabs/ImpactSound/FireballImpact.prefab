@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4614005271405690478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7389169022387684849}
+  - component: {fileID: 963211540570113281}
+  m_Layer: 0
+  m_Name: FireballImpact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7389169022387684849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614005271405690478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0892115, y: 2.1230202, z: -1.3371153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963211540570113281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4614005271405690478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f96a33f34708c1468325c8fe1446dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactBloodAudioclips:
+  - {fileID: 8300000, guid: fce22763d087363419e4a1446fb42c73, type: 3}
+  - {fileID: 8300000, guid: f726e1a6c6bc2434eb5d08f22d500194, type: 3}
+  - {fileID: 8300000, guid: 496f096212a598649af89d2384489849, type: 3}
+  - {fileID: 8300000, guid: 335ae0791e135924482250e02edf693f, type: 3}
+  - {fileID: 8300000, guid: 5b3e22f7031acd146b724bab7d90bb83, type: 3}
+  - {fileID: 8300000, guid: b345c2b7a9805fe4a89fc40df5294ba7, type: 3}
+  - {fileID: 8300000, guid: a5f8f51f8fa8c10409ce7a842123d24d, type: 3}
+  - {fileID: 8300000, guid: 4499e3baba499e3428a50f98bb943031, type: 3}
+  - {fileID: 8300000, guid: d8892edf879d1554b90b71d4a5b06346, type: 3}
+  - {fileID: 8300000, guid: c4679b99b7055ba4ebdd1c8672dba4b6, type: 3}
+  impactMetallAudioclips: []
+  impactStoneAudioclips: []
+  impactWoodAudioclips: []
+  impactType: 0

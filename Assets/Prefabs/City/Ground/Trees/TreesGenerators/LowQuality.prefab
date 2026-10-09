@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6384361905130992504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4769827049665384066}
+  - component: {fileID: 85419330747604611}
+  m_Layer: 0
+  m_Name: LowQuality
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4769827049665384066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384361905130992504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.787281, y: 11.924807, z: 2.696044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &85419330747604611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384361905130992504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f7798a7dff16478503e89e2f220b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trees:
+  - {fileID: 2894091275514279636, guid: fab6dabf06b8d214ba5cc6957dae6c68, type: 3}
+  - {fileID: 6678601499625539560, guid: 3d898d79ba9266c49a78ad5c2bec63e5, type: 3}
+  - {fileID: 4160731934968417316, guid: 7d27700e4e4cb754cbb73e23e93faa9f, type: 3}
+  - {fileID: 6540000099831321894, guid: cfa72d2a2b5f3af43b87b67f2e96db70, type: 3}
+  - {fileID: 2734902017851219007, guid: 1d53099fddd0e8c44b400482ea95a384, type: 3}
+  - {fileID: 251506064143830070, guid: e55df62ca22efeb48ba56ad025ea7eba, type: 3}
+  - {fileID: 4722751910706218335, guid: e397928cb9fcbb44a8eb92ceac2373e2, type: 3}
+  - {fileID: 6849074299433256114, guid: 2cc30b77963b5e84197aff5e0b7bc44d, type: 3}
+  - {fileID: 2322569755195482283, guid: b22676bb6b98fca49b891fe9f84cb513, type: 3}
+  - {fileID: 2933841424618050909, guid: 460e3804f73ebb04e93fdb9b9c7b9ce5, type: 3}
+  - {fileID: 544564606735027308, guid: 120b87655ba9ec94287b1185f6cc8a60, type: 3}
+  minAmount: 1
+  maxAmount: 4
+  deltaPos: 3.5

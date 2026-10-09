@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7283950822042263199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5838586018674381784}
+  - component: {fileID: 6157199658122485276}
+  m_Layer: 0
+  m_Name: GrassGeneratorGreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5838586018674381784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7283950822042263199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.2504454, y: 5.840975, z: 1.0269551}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6157199658122485276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7283950822042263199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a5a40568bb55f438cc49d256ceae33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grass:
+  - {fileID: 5058472557122665246, guid: 3f9a7581137f8e74cb87ea667dd4d022, type: 3}
+  - {fileID: 7176266751930605710, guid: 0c05366eeacd7074e87783a4512dab85, type: 3}
+  - {fileID: 3675470426120202234, guid: 40e939ea85e60304d9ad208a23ff3f68, type: 3}
+  - {fileID: 5507173717582628364, guid: 9b0f4ef103f639e4295be7a708910224, type: 3}
+  - {fileID: 5840628692341611293, guid: cd6871a3a92024d41a57ee9d900a762d, type: 3}
+  - {fileID: 2235751004788999304, guid: 399091152fa317f4f8714d3d26927fd7, type: 3}
+  - {fileID: 8245724636555948053, guid: 2063f475cb05b344697f64649cccbaab, type: 3}
+  - {fileID: 7007429479242983562, guid: 11ddb09155652324d992e341bd6aaa25, type: 3}
+  - {fileID: 8806194039663140609, guid: 26f6f2d11a98c3c459630493b33bdfb8, type: 3}
+  - {fileID: 225374662768722675, guid: 2f80448c087e11f4392fdfda7e2ff5ba, type: 3}
+  - {fileID: 581904916129644925, guid: 3b5f7c31faabcbb4c8b7e9ee5be9feab, type: 3}
+  - {fileID: 7158265336139760146, guid: 142ea061a77a4e248af0e06d8ee08ddc, type: 3}
+  - {fileID: 765797800308574305, guid: b20ccbf062e9f484a9b976a12d7258eb, type: 3}
+  - {fileID: 3214464510758783662, guid: df9bf530368480c43ad432fb68626824, type: 3}
+  - {fileID: 2072177824897419738, guid: 3ad96e3e03be89346ab0bc503ff3b3f8, type: 3}
+  - {fileID: 8853015988813262860, guid: ba9da5807e45d1f4f837c728c19ed1be, type: 3}
+  - {fileID: 841507734979476537, guid: 00526424e6d645e4a8881f4b9bf6b1f2, type: 3}
+  - {fileID: 3389493678244594932, guid: 9babb13fd4a04424c82e1ce77a8fe2f4, type: 3}
+  - {fileID: 5129652413357421697, guid: 26bc8d4cc5654f54393492457d115a0c, type: 3}
+  - {fileID: 8172263091288027900, guid: 04f8e0c156d3a3d4a85c44587777cf7b, type: 3}
+  - {fileID: 6805586528986905687, guid: 2dc6c83d305290244852bb2aa60d51d1, type: 3}
+  - {fileID: 6892079503072893289, guid: fa0e991b9f8c1b249a3e3ee5960326e7, type: 3}
+  - {fileID: 2169614598711893495, guid: f89f3671751f443468f0113999204fae, type: 3}
+  - {fileID: 8083319651888667555, guid: f7403e02ccfaf1e4fade0f33f766650e, type: 3}
+  - {fileID: 2946688133399475753, guid: 8a340c2e298a6e94996da217b9edab22, type: 3}
+  - {fileID: 1141838820064206325, guid: 58a96cb3df36dff49bb4d1ae0281d168, type: 3}
+  - {fileID: 8658163758684152133, guid: 93d14ce5e745acb4bb7783704e3c7ef5, type: 3}
+  - {fileID: 1835841408359581348, guid: 2accac8d706a78643b150d504146fcc4, type: 3}
+  - {fileID: 7434952964237797805, guid: ec4574105ef67994499d143178d157f4, type: 3}
+  - {fileID: 4604902434235158407, guid: 5eaf8f5859de93a4da27f5fd74a52aee, type: 3}
+  - {fileID: 3375435069790825054, guid: 49a9322830c5e4f40ba274a506a229dc, type: 3}
+  minGrassAmount: 3
+  maxGrassAmount: 8
+  deltaPos: 3.5

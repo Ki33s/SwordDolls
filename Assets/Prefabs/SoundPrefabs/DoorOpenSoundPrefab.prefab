@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6057209618876162887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8029033923888505756}
+  - component: {fileID: 4794320635837260154}
+  m_Layer: 0
+  m_Name: DoorOpenSoundPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8029033923888505756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6057209618876162887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5684428, y: 2.7607155, z: -0.7693205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4794320635837260154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6057209618876162887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639ab002911a3e541b0776b1ff4fba25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionSound:
+  - {fileID: 8300000, guid: 75f77bafb39ef614db52bf306839edf2, type: 3}
+  - {fileID: 8300000, guid: e5e2e9c6a187bbd449e4255c7bb853c6, type: 3}
+  - {fileID: 8300000, guid: e264452646adeba4f823478f740f9c3b, type: 3}
+  - {fileID: 8300000, guid: 338d0c22a938f2b46b1b1fa54face986, type: 3}
