@@ -36,11 +36,12 @@ public static class RecoverySetup
         if (!pipeline) throw new Exception("Original Ultra URP asset missing");
         GraphicsSettings.defaultRenderPipeline = pipeline;
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene("Assets/Scenes/SampleScene.unity", true) };
+        PlayerSettings.productName = "SwordDolls";
         PlayerSettings.fullScreenMode = FullScreenMode.FullScreenWindow;
         PlayerSettings.runInBackground = true;
         AssetDatabase.SaveAssets();
         Directory.CreateDirectory("Builds/Windows");
-        var report = BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, "Builds/Windows/SwordHeroDolls.exe", BuildTarget.StandaloneWindows64, BuildOptions.Development);
+        var report = BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, "Builds/Windows/SwordDolls.exe", BuildTarget.StandaloneWindows64, BuildOptions.Development);
         Debug.Log("RECOVERY_BUILD " + report.summary.result);
         if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded) throw new Exception("Recovery build failed");
     }

@@ -10,7 +10,7 @@ public static class WeaponReview
  public static void Run()
  {
   Directory.CreateDirectory("Review");
-  var report = new StringBuilder("# Оружие оригинального SwordHeroDolls\n\nИсточник: игровые префабы; просмотр в редакторе, без изменения баланса.\n\n");
+  var report = new StringBuilder("# Оружие оригинального SwordDolls\n\nИсточник: игровые префабы; просмотр в редакторе, без изменения баланса.\n\n");
   foreach(var guid in AssetDatabase.FindAssets("t:Prefab",new[]{"Assets/Prefabs/Weapons/Player"}))
   {
    var path=AssetDatabase.GUIDToAssetPath(guid); var prefab=AssetDatabase.LoadAssetAtPath<GameObject>(path);

@@ -34,7 +34,7 @@ public sealed class CampaignHUD : MonoBehaviour
  void OnGUI()
  {
   if(font)GUI.skin.font=font;
-  GUI.Label(new Rect(Screen.width-310,Screen.height-65,300,25),SwordInput.TestEnabled?"АВТОПРОВЕРКА — 09.10":"SwordHeroDolls — версия 09.10",new GUIStyle(GUI.skin.label){fontSize=14,alignment=TextAnchor.MiddleRight});
+  GUI.Label(new Rect(Screen.width-310,Screen.height-65,300,25),SwordInput.TestEnabled?"АВТОПРОВЕРКА — 09.10":"SwordDolls — версия 09.10",new GUIStyle(GUI.skin.label){fontSize=14,alignment=TextAnchor.MiddleRight});
   if(Victory){if(CampaignMenu.Draw("ПОБЕДА — ПЯТЬ ЭТАПОВ ПРОЙДЕНЫ",new[]{"Новый забег"},new[]{"Начать с простого клинка и собрать другое сочетание улучшений."},0)==0)Restart();return;}
   if(CampaignMenu.OpenCount>0)return;
   var global=GameObject.Find("GlobalParameters");if(!global)return;var city=global.GetComponent<GlobalParameters>().nowCity;if(!city)return;var stage=city.GetComponent<CampaignStage>();if(!stage)return;
