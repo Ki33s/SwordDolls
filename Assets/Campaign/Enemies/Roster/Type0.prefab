@@ -32070,13 +32070,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicalWalking: 1
-  walkStepTime: 0.22
-  runStepTime: 0.12
+  walkStepTime: 0.2
+  runStepTime: 0.1
   footLift: 0.14
   footPrediction: 0.16
-  footSpring: 430
-  footDamping: 30
-  maxFootAcceleration: 550
+  footReach: 0.95
+  footSpring: 600
+  footDamping: 28
+  maxFootAcceleration: 750
   obstacle: 0
   bodySpeed: 2.3
   swordSpeedModificator: 1

@@ -409,6 +409,9 @@ public class City : MonoBehaviour
 
     void GenerateGround()
     {
+        var groundVisuals = new GameObject("Ground visuals");
+        groundVisuals.transform.SetParent(transform, false);
+        groundVisuals.AddComponent<TerrainVisuals>();
         float deltaPos = (tilesNum - 1) * tilesLength / 2;
 
         int tileType = Random.Range(0, tilesTypes);
@@ -443,13 +446,14 @@ public class City : MonoBehaviour
                     firstTylePodType = tilePodType;
                 }
 
-                GameObject newGroundTile = Instantiate(groundTile, new Vector3(transform.position.x-deltaPos + i*tilesLength,-0.2f, transform.position.z - deltaPos + k * tilesLength), Quaternion.Euler(0, Random.Range(0, 360), 0),transform);
+                GameObject newGroundTile = Instantiate(groundTile, new Vector3(transform.position.x-deltaPos + i*tilesLength,-0.2f, transform.position.z - deltaPos + k * tilesLength), Quaternion.Euler(0, Random.Range(0, 360), 0),groundVisuals.transform);
+                TerrainVisuals.RemoveCollision(newGroundTile);
 
                 int tileNum = tileType * (tilesTypes-1) * tilesPodTypes + tilePodType;
                 newGroundTile.GetComponent<Renderer>().material = groundMaterials[tileNum];
                 tileMat.Add(tileNum);
 
-                Instantiate(grassGenerators[tileNum], new Vector3(transform.position.x - deltaPos + i * tilesLength, 0, transform.position.z - deltaPos + k * tilesLength), Quaternion.identity, transform);
+                Instantiate(grassGenerators[tileNum], new Vector3(transform.position.x - deltaPos + i * tilesLength, 0, transform.position.z - deltaPos + k * tilesLength), Quaternion.identity, groundVisuals.transform);
 
                 if (i == 0)
                 {
@@ -482,7 +486,12 @@ public class City : MonoBehaviour
         }
 
         GameObject newGroundCollider = Instantiate(groundCollider, transform.position, Quaternion.identity, transform);
-        newGroundCollider.GetComponent<BoxCollider>().size = new Vector3(tilesNum * tilesLength, 1, tilesNum * tilesLength);
+        var surface = newGroundCollider.GetComponent<BoxCollider>();
+        newGroundCollider.transform.localScale = Vector3.one;
+        surface.center = Vector3.down * .5f;
+        surface.size = new Vector3(tilesNum * tilesLength, 1, tilesNum * tilesLength);
+        surface.isTrigger = false;
+        surface.enabled = true;
 
     }
 }

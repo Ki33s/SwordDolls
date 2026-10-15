@@ -76,7 +76,7 @@ internal sealed class PhysicalGait
         float run = Mathf.InverseLerp(.5f, 4.5f, speed);
         float period = Mathf.Lerp(body.walkStepTime, body.runStepTime, run);
         float width = Mathf.Clamp(body.stepWidth, .13f, .2f) * legLength;
-        Vector3 lead = Vector3.ClampMagnitude(velocity * (body.footPrediction + period * .5f), legLength * .95f);
+        Vector3 lead = Vector3.ClampMagnitude(velocity * (body.footPrediction + period * .5f), legLength * body.footReach);
         Vector3 leftTarget = Ground(hips.position - side * width + lead, left.sole);
         Vector3 rightTarget = Ground(hips.position + side * width + lead, right.sole);
         float errorL = Vector3.ProjectOnPlane(leftTarget - left.rig.position, Vector3.up).magnitude;
@@ -99,10 +99,11 @@ internal sealed class PhysicalGait
             swinging.previousTarget = swinging.start;
             phase = 0; duration = period; Steps++;
         }
+        // Include the landing endpoint instead of ending one physics tick short.
+        if (swinging != null) phase = Mathf.Min(1, phase + dt / duration);
         Drive(left, leftTarget, health, run); Drive(right, rightTarget, health, run);
         if (swinging != null)
         {
-            phase += dt / duration;
             if (phase >= 1)
             {
                 swinging.planted = swinging.end;

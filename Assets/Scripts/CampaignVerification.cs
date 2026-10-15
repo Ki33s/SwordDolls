@@ -31,6 +31,23 @@ public sealed class CampaignVerification : MonoBehaviour
   Debug.Log("CAMPAIGN_VERIFY_PASS: expanded unique card families, full possession heal, bonus shield absorption, echo blade, breakable scenery, stationary upgrade choice, real exit crystal proximity across five stages, two forges, progress replay and victory");Application.Quit();
  }
  IEnumerator Frames(int count){for(int i=0;i<count;i++)yield return null;}
+ void VerifyGround()
+ {
+  var city=Global.nowCity.GetComponent<City>();
+  var visuals=city.GetComponentInChildren<TerrainVisuals>();
+  Check(visuals&&visuals.GetComponentsInChildren<Renderer>().Length>=city.tilesNum*city.tilesNum,"Ground artwork missing");
+  Check(!visuals.GetComponentsInChildren<Collider>(true).Any(c=>c.enabled),"Terrain/grass collision must be removed");
+  Check(!visuals.GetComponentInChildren<BreakableProp>(),"Scenery preparation must skip ground artwork");
+  var floor=city.transform.Find("GroundCollider(Clone)").GetComponent<BoxCollider>();
+  Check(floor.enabled&&!floor.isTrigger&&Mathf.Abs(floor.bounds.max.y-city.transform.position.y)<.001f,"Flat support surface missing or wrong height");
+  float radius=city.tilesNum*city.tilesLength*.5f-1;
+  for(int x=-4;x<=4;x++)for(int z=-4;z<=4;z++)
+  {
+   var origin=city.transform.position+new Vector3(x*radius/4,3,z*radius/4);
+   Check(floor.Raycast(new Ray(origin,Vector3.down),out var hit,4)&&Mathf.Abs(hit.point.y-city.transform.position.y)<.001f,"Ground must be flat across the whole arena");
+  }
+  Debug.Log("FLAT_GROUND_PASS stage="+Stage.number+" grid=81 artworkRenderers="+visuals.GetComponentsInChildren<Renderer>().Length);
+ }
  IEnumerator DrainCards()
  {
   int guard=0;
@@ -119,6 +136,7 @@ public sealed class CampaignVerification : MonoBehaviour
    Check(Hero.GetComponent<Sword>().newLevelTimer==0,"Transition must not launch sword upwards");
    Check(Stage.number==number,"Incorrect round sequence");Debug.Log("CAMPAIGN_STAGE "+number+" "+Stage.title);
    yield return new WaitForSecondsRealtime(2.2f);
+   VerifyGround();
    yield return DrainCards();
    float populationDeadline=Time.realtimeSinceStartup+10;while(Stage.SpawnedCount<Stage.PlannedCount){yield return DrainCards();yield return null;Check(Time.realtimeSinceStartup<populationDeadline,"Roster spawn stuck "+Stage.SpawnedCount+"/"+Stage.PlannedCount);}
    if(Stage.bossPrefab)

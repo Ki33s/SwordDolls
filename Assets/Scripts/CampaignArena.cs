@@ -19,7 +19,7 @@ public sealed class CampaignArena:MonoBehaviour
  {
   foreach(Transform child in transform)
   {
-   if(child.GetComponent<Crystall>()||child.GetComponent<Anvill>()||child.GetComponent<City>())continue;
+   if(child.GetComponent<Crystall>()||child.GetComponent<Anvill>()||child.GetComponent<City>()||child.GetComponent<TerrainVisuals>())continue;
    var renderers=child.GetComponentsInChildren<MeshRenderer>();if(renderers.Length==0)continue;
    var bounds=renderers[0].bounds;foreach(var renderer in renderers)bounds.Encapsulate(renderer.bounds);
    if(bounds.size.y>.4f)BreakableProp.Setup(child.gameObject);

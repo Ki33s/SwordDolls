@@ -14,7 +14,8 @@ public class GrassGenerator : MonoBehaviour
 
         for (int i = 0; i < randNum; i++)
         {
-            Instantiate(grass[Random.Range(0, grass.Length)], new Vector3(transform.position.x + Random.Range(-deltaPos, deltaPos), transform.position.y, transform.position.z + Random.Range(-deltaPos, deltaPos)), Quaternion.Euler(0, Random.Range(0, 360), 0), transform);
+            var visual = Instantiate(grass[Random.Range(0, grass.Length)], new Vector3(transform.position.x + Random.Range(-deltaPos, deltaPos), transform.position.y, transform.position.z + Random.Range(-deltaPos, deltaPos)), Quaternion.Euler(0, Random.Range(0, 360), 0), transform);
+            if (GetComponentInParent<TerrainVisuals>()) TerrainVisuals.RemoveCollision(visual);
         }
     }
 }

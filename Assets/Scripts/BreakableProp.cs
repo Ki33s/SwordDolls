@@ -27,6 +27,7 @@ public sealed class BreakableProp:MonoBehaviour
  }
  public static void Setup(GameObject go)
  {
+  if(go.GetComponentInParent<TerrainVisuals>())return;
   if(!go.GetComponentInChildren<Collider>())foreach(var renderer in go.GetComponentsInChildren<MeshRenderer>())renderer.gameObject.AddComponent<BoxCollider>();
   var body=go.GetComponent<Rigidbody>();if(!body)body=go.AddComponent<Rigidbody>();body.isKinematic=true;body.useGravity=false;
   if(!go.GetComponent<BreakableProp>())go.AddComponent<BreakableProp>();

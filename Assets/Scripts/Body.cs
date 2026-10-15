@@ -4,13 +4,14 @@ public class Body : MonoBehaviour
 {
     [Header("Physical walking")]
     public bool physicalWalking = true;
-    public float walkStepTime = .22f;
-    public float runStepTime = .12f;
+    public float walkStepTime = .20f;
+    public float runStepTime = .10f;
     public float footLift = .14f;
     public float footPrediction = .16f;
-    public float footSpring = 430;
-    public float footDamping = 30;
-    public float maxFootAcceleration = 550;
+    [Range(.25f, .95f)] public float footReach = .95f;
+    public float footSpring = 600;
+    public float footDamping = 28;
+    public float maxFootAcceleration = 750;
     PhysicalGait gait;
     public int WalkingSteps => gait != null ? gait.Steps : 0;
     public bool obstacle = true;

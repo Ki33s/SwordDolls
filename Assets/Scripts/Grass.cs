@@ -8,6 +8,7 @@ public class Grass : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GetComponentInParent<TerrainVisuals>()) TerrainVisuals.RemoveCollision(gameObject);
         if(Random.Range(0f,1f) < newGrassGenProb)
         {
             Instantiate(gameObject, new Vector3(transform.position.x + Random.Range(-deltapos, deltapos), transform.position.y, transform.position.z + Random.Range(-deltapos, deltapos)), Quaternion.Euler(0, Random.Range(0, 360),0), transform);

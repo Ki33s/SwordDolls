@@ -17,13 +17,29 @@ public sealed class WalkingProbe : MonoBehaviour
     {
         public string name;
         public int samples, steps;
-        public float averageSpeed, footLag, maxFootLag, lowHeadFraction, footClearance, groundContact;
+        public float averageSpeed, footLag, maxFootLag, lowHeadFraction, footClearance, groundContact, leadingFootLag, bothFeetBehind;
     }
     [Serializable] sealed class Report
     {
         public string mode, pelvis;
         public float totalMass, legLength;
         public List<Segment> segments = new List<Segment>();
+    }
+    [Serializable] sealed class Settings
+    {
+        public float walkStepTime, runStepTime, footLift, footPrediction, footReach, footSpring, footDamping, maxFootAcceleration;
+        public Settings(Body body)
+        {
+            walkStepTime = body.walkStepTime; runStepTime = body.runStepTime; footLift = body.footLift;
+            footPrediction = body.footPrediction; footReach = body.footReach; footSpring = body.footSpring;
+            footDamping = body.footDamping; maxFootAcceleration = body.maxFootAcceleration;
+        }
+        public void Apply(Body body)
+        {
+            body.walkStepTime = walkStepTime; body.runStepTime = runStepTime; body.footLift = footLift;
+            body.footPrediction = footPrediction; body.footReach = footReach; body.footSpring = footSpring;
+            body.footDamping = footDamping; body.maxFootAcceleration = maxFootAcceleration;
+        }
     }
     string errors;
     float started;
@@ -59,11 +75,17 @@ public sealed class WalkingProbe : MonoBehaviour
         foreach (var actor in FindObjectsByType<Body>(FindObjectsSortMode.None)) Destroy(actor.gameObject);
         foreach (var weapon in FindObjectsByType<Sword>(FindObjectsSortMode.None)) if (weapon.gameObject != hero) Destroy(weapon.gameObject);
         var global = GameObject.Find("GlobalParameters").GetComponent<GlobalParameters>();
-        global.nowCity.SetActive(false); CampaignHUD.Active.enabled = false;
-        var floor = GameObject.CreatePrimitive(PrimitiveType.Cube); floor.name = "Walking review floor";
-        floor.transform.position = Vector3.down * .5f; floor.transform.localScale = new Vector3(200, 1, 200);
-        floor.GetComponent<Renderer>().sharedMaterial = global.nowCity.GetComponent<City>().groundMaterials[0];
-                string bodyType = "fighter";
+        // Keep the generated arena, terrain, grass and props. Only suspend combat/progression.
+        global.nowCity.GetComponent<City>().enabled = false;
+        global.nowCity.GetComponent<CampaignStage>().CancelInvoke();
+        CampaignHUD.Active.enabled = false;
+        var floor = global.nowCity.transform.Find("GroundCollider(Clone)").gameObject;
+        var visuals = global.nowCity.GetComponentInChildren<TerrainVisuals>();
+        foreach (var collider in visuals.GetComponentsInChildren<Collider>())
+            if (collider.enabled) throw new Exception("Visual ground still has collision: " + collider.name);
+        if (visuals.GetComponentInChildren<BreakableProp>()) throw new Exception("Visual ground became destructible");
+        Debug.Log("WALKING_ARENA flatSurfaceY=" + floor.GetComponent<Collider>().bounds.max.y + " visualRenderers=" + visuals.GetComponentsInChildren<Renderer>().Length);
+        string bodyType = "fighter";
         var arguments = Environment.GetCommandLineArgs(); int bodyArgument = Array.IndexOf(arguments, "-walkingBody");
         if (bodyArgument >= 0 && bodyArgument + 1 < arguments.Length) bodyType = arguments[bodyArgument + 1];
         var prefab = Resources.Load<GameObject>("CampaignTestEnemy");
@@ -72,11 +94,18 @@ public sealed class WalkingProbe : MonoBehaviour
         if (bodyType == "boss") prefab = roster.bossPrefab;
         if (!prefab) throw new Exception("Walking body prefab missing: " + bodyType);
         var actorGo = Instantiate(prefab, new Vector3(0,.15f,0), Quaternion.identity);
-                var body = actorGo.GetComponent<Body>(); body.physicalWalking = !legacy;
+        var body = actorGo.GetComponent<Body>(); body.physicalWalking = !legacy;
         string profile = "default"; int profileArgument = Array.IndexOf(arguments, "-walkingProfile");
         if (profileArgument >= 0 && profileArgument + 1 < arguments.Length) profile = arguments[profileArgument + 1];
-        if (profile == "fast") { body.walkStepTime = .22f; body.runStepTime = .12f; body.footSpring = 430; body.footDamping = 30; body.maxFootAcceleration = 550; }
-        if (profile == "steady") { body.walkStepTime = .27f; body.runStepTime = .16f; }
+        // Previous shipped tuning, kept as a reproducible comparison on the same arena.
+        if (profile == "fast") { body.walkStepTime = .22f; body.runStepTime = .12f; body.footLift = .14f; body.footPrediction = .16f; body.footReach = .95f; body.footSpring = 430; body.footDamping = 30; body.maxFootAcceleration = 550; }
+        int settingsArgument = Array.IndexOf(arguments, "-walkingSettings");
+        if (settingsArgument >= 0 && settingsArgument + 1 < arguments.Length)
+        {
+            var settings = new Settings(body);
+            JsonUtility.FromJsonOverwrite(File.ReadAllText(arguments[settingsArgument + 1]), settings);
+            settings.Apply(body);
+        }
         yield return null; yield return null;
         actorGo.GetComponent<MainHealth>().health = 5;
         var part = Array.Find(actorGo.GetComponentsInChildren<Health>(), h => h.GetComponent<Collider>());
@@ -89,28 +118,33 @@ public sealed class WalkingProbe : MonoBehaviour
         camera.orthographic = true; camera.orthographicSize = 1.6f; camera.nearClipPlane = .05f; camera.farClipPlane = 100;
         var texture = new RenderTexture(960, 720, 24); camera.targetTexture = texture;
         var photo = new Texture2D(960, 720, TextureFormat.RGB24, false);
-        string mode = (legacy ? "legacy" : "tuned") + (bodyType == "fighter" ? "" : "-" + bodyType) + (profile == "default" ? "" : "-" + profile);
+        string mode = "arena-" + (legacy ? "legacy" : "tuned") + (bodyType == "fighter" ? "" : "-" + bodyType) + (profile == "default" ? "" : "-" + profile);
         string folder = Path.GetFullPath(Path.Combine(Application.dataPath, "../../../Artifacts/Walking/" + mode));
         Directory.CreateDirectory(folder);
         var report = new Report { mode = mode, pelvis = pelvis.name,
             legLength = Vector3.Distance(body.upperLegL.transform.position, body.lowerLegL.transform.position) + Vector3.Distance(body.lowerLegL.transform.position, body.footL.transform.position) };
         foreach (var rb in actorGo.GetComponentsInChildren<Rigidbody>()) report.totalMass += rb.mass;
         Debug.Log("WALKING_RIG " + JsonUtility.ToJson(report));
-        Debug.Log("WALKING_PROFILE spring=" + body.footSpring + " damping=" + body.footDamping + " walkTime=" + body.walkStepTime + " runTime=" + body.runStepTime);
+        Debug.Log("WALKING_PROFILE spring=" + body.footSpring + " damping=" + body.footDamping + " walkTime=" + body.walkStepTime + " runTime=" + body.runStepTime + " reach=" + body.footReach);
+        File.WriteAllText(Path.Combine(folder,"settings.json"), JsonUtility.ToJson(new Settings(body),true));
         Debug.Log("WALKING_FEET footMass=" + body.footL.GetComponent<Rigidbody>().mass + " thighMass=" + body.upperLegL.GetComponent<Rigidbody>().mass + " shinMass=" + body.lowerLegL.GetComponent<Rigidbody>().mass + " trigger=" + body.footL.GetComponent<Collider>().isTrigger + " ignoresFloor=" + Physics.GetIgnoreLayerCollision(body.footL.layer, floor.layer));
         string[] names = { "walk", "run", "right_turn", "diagonal", "reverse", "stop" };
-        Vector2[] controls = { Vector2.up * .55f, Vector2.up, Vector2.right, new Vector2(-.7f,.7f), Vector2.down, Vector2.zero };
+        Vector2[] controls = { Vector2.up * .55f, Vector2.up, Vector2.right, new Vector2(-.7f,-.7f), Vector2.down, Vector2.zero };
         int frame = 0;
         for (int section = 0; section < names.Length; section++)
         {
             var stats = new Segment { name = names[section] }; int steps = body.WalkingSteps;
             SwordInput.TestAxes = controls[section];
-            for (int tick = 0; tick < 100; tick++)
+            for (int tick = 0; tick < 80; tick++)
             {
                 yield return new WaitForFixedUpdate();
                 float speed = Vector3.ProjectOnPlane(pelvis.linearVelocity, Vector3.up).magnitude;
                 Vector3 direction = Vector3.ProjectOnPlane(pelvis.linearVelocity, Vector3.up).normalized;
-                float lag = Mathf.Max(Vector3.Dot(pelvis.position - body.footL.transform.position, direction), Vector3.Dot(pelvis.position - body.footR.transform.position, direction));
+                float lagL = Vector3.Dot(pelvis.position - body.footL.transform.position, direction);
+                float lagR = Vector3.Dot(pelvis.position - body.footR.transform.position, direction);
+                float lag = Mathf.Max(lagL,lagR);
+                stats.leadingFootLag += Mathf.Min(lagL,lagR);
+                if(speed>1&&Mathf.Min(lagL,lagR)>report.legLength*.1f)stats.bothFeetBehind++;
                 if (Mathf.Min(body.footL.GetComponent<Collider>().bounds.min.y, body.footR.GetComponent<Collider>().bounds.min.y) < .04f) stats.groundContact++;
                 stats.samples++; stats.averageSpeed += speed; stats.footLag += lag; stats.maxFootLag = Mathf.Max(stats.maxFootLag, lag);
                 if (body.head.transform.position.y < report.legLength * 1.2f) stats.lowHeadFraction++;
@@ -125,6 +159,7 @@ public sealed class WalkingProbe : MonoBehaviour
                 }
             }
             stats.groundContact /= stats.samples; stats.averageSpeed /= stats.samples; stats.footLag /= stats.samples; stats.lowHeadFraction /= stats.samples; stats.footClearance /= stats.samples;
+            stats.leadingFootLag /= stats.samples; stats.bothFeetBehind /= stats.samples;
             stats.steps = body.WalkingSteps - steps; report.segments.Add(stats); Debug.Log("WALKING_SEGMENT " + JsonUtility.ToJson(stats));
         }
         SwordInput.TestAxes = Vector2.zero;
