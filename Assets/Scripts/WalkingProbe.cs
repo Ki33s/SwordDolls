@@ -17,7 +17,7 @@ public sealed class WalkingProbe : MonoBehaviour
     {
         public string name;
         public int samples, steps;
-        public float averageSpeed, footLag, maxFootLag, lowHeadFraction, footClearance, groundContact, leadingFootLag, bothFeetBehind;
+        public float averageSpeed, footLag, maxFootLag, lowHeadFraction, footClearance, groundContact, leadingFootLag, bothFeetBehind, strideSpan, lateralSpan;
     }
     [Serializable] sealed class Report
     {
@@ -27,18 +27,20 @@ public sealed class WalkingProbe : MonoBehaviour
     }
     [Serializable] sealed class Settings
     {
-        public float walkStepTime, runStepTime, footLift, footPrediction, footReach, footSpring, footDamping, maxFootAcceleration;
+        public float walkStepTime, runStepTime, footLift, footPrediction, footReach, footSpring, footDamping, maxFootAcceleration, footLegMass, stepWidth;
         public Settings(Body body)
         {
             walkStepTime = body.walkStepTime; runStepTime = body.runStepTime; footLift = body.footLift;
             footPrediction = body.footPrediction; footReach = body.footReach; footSpring = body.footSpring;
             footDamping = body.footDamping; maxFootAcceleration = body.maxFootAcceleration;
+            footLegMass = body.footLegMass; stepWidth = body.stepWidth;
         }
         public void Apply(Body body)
         {
             body.walkStepTime = walkStepTime; body.runStepTime = runStepTime; body.footLift = footLift;
             body.footPrediction = footPrediction; body.footReach = footReach; body.footSpring = footSpring;
             body.footDamping = footDamping; body.maxFootAcceleration = maxFootAcceleration;
+            body.footLegMass = footLegMass; body.stepWidth = stepWidth;
         }
     }
     string errors;
@@ -79,6 +81,10 @@ public sealed class WalkingProbe : MonoBehaviour
         global.nowCity.GetComponent<City>().enabled = false;
         global.nowCity.GetComponent<CampaignStage>().CancelInvoke();
         CampaignHUD.Active.enabled = false;
+        yield return null;
+        hero.transform.position = new Vector3(0,1.25f,1);
+        foreach(var rb in hero.GetComponentsInChildren<Rigidbody>()) { rb.linearVelocity=Vector3.zero; rb.angularVelocity=Vector3.zero; }
+        UnityEngine.Random.InitState(42);
         var floor = global.nowCity.transform.Find("GroundCollider(Clone)").gameObject;
         var visuals = global.nowCity.GetComponentInChildren<TerrainVisuals>();
         foreach (var collider in visuals.GetComponentsInChildren<Collider>())
@@ -98,7 +104,8 @@ public sealed class WalkingProbe : MonoBehaviour
         string profile = "default"; int profileArgument = Array.IndexOf(arguments, "-walkingProfile");
         if (profileArgument >= 0 && profileArgument + 1 < arguments.Length) profile = arguments[profileArgument + 1];
         // Previous shipped tuning, kept as a reproducible comparison on the same arena.
-        if (profile == "fast") { body.walkStepTime = .22f; body.runStepTime = .12f; body.footLift = .14f; body.footPrediction = .16f; body.footReach = .95f; body.footSpring = 430; body.footDamping = 30; body.maxFootAcceleration = 550; }
+        if (profile == "fast") { body.walkStepTime = .22f; body.runStepTime = .12f; body.footLift = .14f; body.footPrediction = .16f; body.footReach = .95f; body.footLegMass = .25f; body.stepWidth = .1f; body.footSpring = 430; body.footDamping = 30; body.maxFootAcceleration = 550; }
+        if (profile == "narrow") { body.walkStepTime = .2f; body.runStepTime = .1f; body.footLift = .14f; body.footPrediction = .16f; body.footReach = .95f; body.footLegMass = .25f; body.stepWidth = .1f; body.footSpring = 600; body.footDamping = 28; body.maxFootAcceleration = 750; }
         int settingsArgument = Array.IndexOf(arguments, "-walkingSettings");
         if (settingsArgument >= 0 && settingsArgument + 1 < arguments.Length)
         {
@@ -143,6 +150,8 @@ public sealed class WalkingProbe : MonoBehaviour
                 float lagL = Vector3.Dot(pelvis.position - body.footL.transform.position, direction);
                 float lagR = Vector3.Dot(pelvis.position - body.footR.transform.position, direction);
                 float lag = Mathf.Max(lagL,lagR);
+                stats.strideSpan += Mathf.Abs(lagL-lagR);
+                stats.lateralSpan += Mathf.Abs(Vector3.Dot(body.footL.transform.position-body.footR.transform.position,Vector3.Cross(Vector3.up,direction)));
                 stats.leadingFootLag += Mathf.Min(lagL,lagR);
                 if(speed>1&&Mathf.Min(lagL,lagR)>report.legLength*.1f)stats.bothFeetBehind++;
                 if (Mathf.Min(body.footL.GetComponent<Collider>().bounds.min.y, body.footR.GetComponent<Collider>().bounds.min.y) < .04f) stats.groundContact++;
@@ -160,6 +169,7 @@ public sealed class WalkingProbe : MonoBehaviour
             }
             stats.groundContact /= stats.samples; stats.averageSpeed /= stats.samples; stats.footLag /= stats.samples; stats.lowHeadFraction /= stats.samples; stats.footClearance /= stats.samples;
             stats.leadingFootLag /= stats.samples; stats.bothFeetBehind /= stats.samples;
+            stats.strideSpan /= stats.samples; stats.lateralSpan /= stats.samples;
             stats.steps = body.WalkingSteps - steps; report.segments.Add(stats); Debug.Log("WALKING_SEGMENT " + JsonUtility.ToJson(stats));
         }
         SwordInput.TestAxes = Vector2.zero;

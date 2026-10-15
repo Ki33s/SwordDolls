@@ -1,0 +1,62 @@
+{
+  "baseline": {
+    "walkStepTime": 0.20000000298023224,
+    "runStepTime": 0.10000000149011612,
+    "footLift": 0.14000000059604645,
+    "footPrediction": 0.1599999964237213,
+    "footReach": 0.949999988079071,
+    "footSpring": 600.0,
+    "footDamping": 28.0,
+    "maxFootAcceleration": 750.0,
+    "footLegMass": 0.25,
+    "stepWidth": 0.10000000149011612
+  },
+  "wide": {
+    "walkStepTime": 0.20000000298023224,
+    "runStepTime": 0.10000000149011612,
+    "footLift": 0.18000000715255737,
+    "footPrediction": 0.23999999463558197,
+    "footReach": 1.2000000476837158,
+    "footSpring": 600.0,
+    "footDamping": 28.0,
+    "maxFootAcceleration": 750.0,
+    "footLegMass": 0.25,
+    "stepWidth": 0.30000001192092896
+  },
+  "power": {
+    "walkStepTime": 0.20000000298023224,
+    "runStepTime": 0.10000000149011612,
+    "footLift": 0.14000000059604645,
+    "footPrediction": 0.1599999964237213,
+    "footReach": 0.949999988079071,
+    "footSpring": 600.0,
+    "footDamping": 28.0,
+    "maxFootAcceleration": 750.0,
+    "footLegMass": 0.6000000238418579,
+    "stepWidth": 0.10000000149011612
+  },
+  "widepower": {
+    "walkStepTime": 0.20000000298023224,
+    "runStepTime": 0.10000000149011612,
+    "footLift": 0.18000000715255737,
+    "footPrediction": 0.2199999988079071,
+    "footReach": 1.149999976158142,
+    "footSpring": 600.0,
+    "footDamping": 28.0,
+    "maxFootAcceleration": 750.0,
+    "footLegMass": 0.6000000238418579,
+    "stepWidth": 0.2800000011920929
+  },
+  "longstep": {
+    "walkStepTime": 0.23999999463558197,
+    "runStepTime": 0.14000000059604645,
+    "footLift": 0.18000000715255737,
+    "footPrediction": 0.2199999988079071,
+    "footReach": 1.149999976158142,
+    "footSpring": 600.0,
+    "footDamping": 28.0,
+    "maxFootAcceleration": 750.0,
+    "footLegMass": 0.6000000238418579,
+    "stepWidth": 0.2800000011920929
+  }
+}

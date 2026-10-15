@@ -43773,11 +43773,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicalWalking: 1
-  walkStepTime: 0.2
-  runStepTime: 0.1
-  footLift: 0.14
-  footPrediction: 0.16
-  footReach: 0.95
+  walkStepTime: 0.24
+  runStepTime: 0.14
+  footLift: 0.18
+  footPrediction: 0.22
+  footReach: 1.15
+  footLegMass: 0.6
   footSpring: 600
   footDamping: 28
   maxFootAcceleration: 750
@@ -43792,7 +43793,7 @@ MonoBehaviour:
   forceObstacle: 700
   followSwordForce: 700
   followSwordMaxSpeed: 5
-  stepWidth: 0.1
+  stepWidth: 0.28
   stepLenght: 0.6
   obstacleDistance: 0.5
   dollId: 2

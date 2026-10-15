@@ -40,7 +40,7 @@ internal sealed class PhysicalGait
     {
         var collider = go.GetComponent<Collider>();
         var foot = new Foot { rig = go.GetComponent<Rigidbody>(), sole = collider ? Mathf.Clamp(go.transform.position.y - collider.bounds.min.y, .035f, .16f) : .07f };
-        foot.driveMass = foot.rig.mass + .25f * (upper.GetComponent<Rigidbody>().mass + lower.GetComponent<Rigidbody>().mass);
+        foot.driveMass = foot.rig.mass + body.footLegMass * (upper.GetComponent<Rigidbody>().mass + lower.GetComponent<Rigidbody>().mass);
         foot.planted = Ground(go.transform.position, foot.sole);
         foot.previousTarget = foot.rig.position;
         return foot;
@@ -75,7 +75,7 @@ internal sealed class PhysicalGait
         float speed = velocity.magnitude;
         float run = Mathf.InverseLerp(.5f, 4.5f, speed);
         float period = Mathf.Lerp(body.walkStepTime, body.runStepTime, run);
-        float width = Mathf.Clamp(body.stepWidth, .13f, .2f) * legLength;
+        float width = Mathf.Clamp(body.stepWidth, .13f, .4f) * legLength;
         Vector3 lead = Vector3.ClampMagnitude(velocity * (body.footPrediction + period * .5f), legLength * body.footReach);
         Vector3 leftTarget = Ground(hips.position - side * width + lead, left.sole);
         Vector3 rightTarget = Ground(hips.position + side * width + lead, right.sole);

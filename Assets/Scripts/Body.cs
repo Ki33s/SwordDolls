@@ -4,11 +4,12 @@ public class Body : MonoBehaviour
 {
     [Header("Physical walking")]
     public bool physicalWalking = true;
-    public float walkStepTime = .20f;
-    public float runStepTime = .10f;
-    public float footLift = .14f;
-    public float footPrediction = .16f;
-    [Range(.25f, .95f)] public float footReach = .95f;
+    public float walkStepTime = .24f;
+    public float runStepTime = .14f;
+    public float footLift = .18f;
+    public float footPrediction = .22f;
+    [Range(.25f, 1.4f)] public float footReach = 1.15f;
+    [Range(.1f, 1f)] public float footLegMass = .6f;
     public float footSpring = 600;
     public float footDamping = 28;
     public float maxFootAcceleration = 750;
@@ -27,7 +28,7 @@ public class Body : MonoBehaviour
     public int followSwordForce = 500;
     public float followSwordMaxSpeed = 5;
 
-    public float stepWidth = 0.2f;
+    public float stepWidth = 0.28f;
     public float stepLenght = 0.5f;
     public float obstacleDistance = 0.3f;
 
