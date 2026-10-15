@@ -171,7 +171,7 @@ public class SwordHero : MonoBehaviour
 
         if (axisHorizontal != 0 || axisVertical != 0)
         {
-            moveVector = new Vector3(axisHorizontal, 0, axisVertical).normalized;
+            moveVector = Vector3.ClampMagnitude(new Vector3(axisHorizontal, 0, axisVertical), 1f);
         }
 
         GetComponent<Sword>().moveVector = moveVector;
@@ -185,7 +185,7 @@ public class SwordHero : MonoBehaviour
         //Debug.Log(Input.GetAxis("Vertical"));
         if (axisHorizontal != 0 || axisVertical != 0)
         {
-            moveVector = new Vector3(axisHorizontal, 0, axisVertical).normalized;
+            moveVector = Vector3.ClampMagnitude(new Vector3(axisHorizontal, 0, axisVertical), 1f);
         }
 
         GetComponent<Sword>().moveVector = moveVector;

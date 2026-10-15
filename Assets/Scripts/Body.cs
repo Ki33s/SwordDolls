@@ -2,6 +2,17 @@ using UnityEngine;
 
 public class Body : MonoBehaviour
 {
+    [Header("Physical walking")]
+    public bool physicalWalking = true;
+    public float walkStepTime = .22f;
+    public float runStepTime = .12f;
+    public float footLift = .14f;
+    public float footPrediction = .16f;
+    public float footSpring = 430;
+    public float footDamping = 30;
+    public float maxFootAcceleration = 550;
+    PhysicalGait gait;
+    public int WalkingSteps => gait != null ? gait.Steps : 0;
     public bool obstacle = true;
     public float bodySpeed = 2;
     public float swordSpeedModificator = 1f;
@@ -90,6 +101,7 @@ public class Body : MonoBehaviour
     public float leftSwordFindTimer = 0f;
 
     public GameObject sword;
+    readonly System.Collections.Generic.List<Collider[]> gripContacts = new System.Collections.Generic.List<Collider[]>();
     private GameObject targetSword;
     private bool followSword = false;
     public bool bashedSword = false;
@@ -146,6 +158,7 @@ public class Body : MonoBehaviour
             sword.GetComponent<Sword>().DropSword();
         dollId = newSword.GetComponent<ImpactTrigger>().dollId;
         SetDollId(transform);
+        BeginGrip(newSword);
         targetSword = newSword;
         followSword = true;
 
@@ -179,6 +192,7 @@ public class Body : MonoBehaviour
             rightFootPooshed = true;
         }
 
+        gait?.Release(.16f);
         pushed = true;
         pushedDir = dir;
     }
@@ -252,12 +266,15 @@ public class Body : MonoBehaviour
         if(!stunned)
         {
             HoldHead();
-            FootsGround();
-
-            if (!stay)
+            if (physicalWalking && !followSword && !bashedSword)
             {
-                MoveFoots();
-                //MoveHips();
+                if (gait == null) gait = new PhysicalGait(this);
+                gait.Tick(healthK, stay);
+            }
+            else
+            {
+                FootsGround();
+                if (!stay) MoveFoots();
             }
                 
 
@@ -726,6 +743,24 @@ public class Body : MonoBehaviour
         ChangeSwordLayer(leftSword.transform, 7);
     }
 
+    // Avoid the blade colliding with its new owner's hand while the grip joint is being formed.
+    void BeginGrip(GameObject weapon)
+    {
+        EndGrip();
+        foreach(var part in GetComponentsInChildren<Collider>())
+        foreach(var blade in weapon.GetComponentsInChildren<Collider>())
+        {
+            if(part == blade || Physics.GetIgnoreCollision(part, blade)) continue;
+            Physics.IgnoreCollision(part, blade, true);
+            gripContacts.Add(new[]{part, blade});
+        }
+    }
+    void EndGrip()
+    {
+        foreach(var pair in gripContacts) if(pair[0] && pair[1]) Physics.IgnoreCollision(pair[0], pair[1], false);
+        gripContacts.Clear();
+    }
+    void OnDestroy(){EndGrip();}
     void FollowSword()
     {
         
@@ -741,6 +776,7 @@ public class Body : MonoBehaviour
             targetSword.transform.rotation = handlerR.transform.rotation;
             targetSword.transform.parent = handlerR.transform;
             targetSword.GetComponent<Sword>().Equip();
+            EndGrip();
         }
     }
 

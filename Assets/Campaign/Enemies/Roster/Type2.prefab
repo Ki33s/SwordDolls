@@ -15934,6 +15934,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54de07e8c46c0c6479d8a52bb20b7839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  physicalWalking: 1
+  walkStepTime: 0.22
+  runStepTime: 0.12
+  footLift: 0.14
+  footPrediction: 0.16
+  footSpring: 430
+  footDamping: 30
+  maxFootAcceleration: 550
   obstacle: 0
   bodySpeed: 3.6
   swordSpeedModificator: 1
